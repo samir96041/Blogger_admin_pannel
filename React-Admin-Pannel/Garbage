@@ -1,0 +1,136 @@
+  //   {
+  //     field: "accessLevel",
+  //     headerName: "Access Level",
+  //     flex: 1,
+  //     renderCell: ({ row: { access } }) => {
+
+  //       return (
+  //         <Box
+  //           width="60%"
+  //           m="0 auto"
+  //           p="5px"
+  //           display="flex"
+  //           justifyContent="center"
+  //           backgroundColor={
+  //             access === "admin"
+  //               ? colors.greenAccent[600]
+  //               : access === "manager"
+  //               ? colors.greenAccent[700]
+  //               : colors.greenAccent[700]
+  //           }
+  //           borderRadius="4px"
+  //         >
+  //           {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+  //           {access === "manager" && <SecurityOutlinedIcon />}
+  //           {access === "user" && <LockOpenOutlinedIcon />}
+  //           <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+  //             {access}
+  //           </Typography>
+  //         </Box>
+  //       );
+  //     },
+  //   },
+  // ];
+
+
+// Login old code
+// import React, { useState } from "react";
+// import { TextField, Button, InputAdornment } from "@mui/material";
+// import { Link } from "react-router-dom";
+// import AccountCircle from '@mui/icons-material/AccountCircle';
+// import LockIcon from '@mui/icons-material/Lock';
+// // import "./Loginform.css"; // Import the CSS file
+// import axios from 'axios';
+
+// function Loginform() {
+//   const [state, setState] = useState({
+//     email: "",
+//     password: "",
+//     emailError: "",
+//     passwordError: "",
+//   });
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const email = event.target.email.value;
+//     const password = event.target.password.value;
+
+//     setState({
+//       ...state,
+//       emailError: email === "" ? "Please enter your email" : "",
+//       passwordError: password === "" ? "Please enter your password" : "",
+//     });
+
+    
+//       axios({
+//         method: 'post',
+//         url: 'http://localhost:5000/user/login',
+//         data: {
+//           email: email,
+//           password: password
+//         }
+//       })
+//       .then(function (response) {
+//         // handle success
+//         console.log(response.data[0].token);
+//         localStorage.setItem("token", response.data[0].token);
+//       // console.log(userData.data[0].title);
+//       })
+//       .catch(function (error) {
+//         // handle error
+//         console.log(error);
+//       });
+
+
+//   };
+
+//   return (
+//     <React.Fragment>
+//       <form autoComplete="off" onSubmit={handleSubmit} className="form-container" style={{margin:"auto",width:"40%",height:"450px", position:"relative",top:"100px"}}>
+//         <h1>Signin</h1>
+//         <TextField
+//           id="email"
+//           name="email"
+//           label="Email"
+//           defaultValue=""
+//           sx={{ mb: 5 ,width: 500}}
+//           InputProps={{
+//             startAdornment: (
+//               <InputAdornment position="start">
+//                 <AccountCircle />
+//               </InputAdornment>
+//             ),
+//           }}
+//         />
+//         <span className="error-message">{state.emailError}</span>
+
+//         <TextField
+//           id="password"
+//           name="password"
+//           label="Password"
+//           defaultValue=""
+       
+//           sx={{ mb: 5 ,width: 500}}
+//           InputProps={{
+//             startAdornment: (
+//               <InputAdornment position="start">
+//                 <LockIcon />
+//               </InputAdornment>
+//             ),
+//           }}
+//         />
+//         <span className="error-message">{state.passwordError}</span>
+
+//         <Button variant="outlined" color="secondary" type="submit">
+//           Login
+//         </Button>
+//       </form>
+
+//       <small>
+//         Need an account? <Link to="/home">Register here</Link>
+//       </small>
+//     </React.Fragment>
+//   );
+// }
+
+// export default Loginform;
