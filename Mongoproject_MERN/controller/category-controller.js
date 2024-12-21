@@ -3,7 +3,7 @@ const category =require("../model/category-model")
 let getCatDetails = async (req, res)=>{
     try {
         let data =await category.find()
-        console.log("all category",data)
+        console.log("all = = = category",data)
         res.json(data)
     } catch (error) {
         console.log(error)
